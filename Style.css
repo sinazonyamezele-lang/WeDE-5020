@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f8f4;
+}
+
+/* Navigation */
+nav {
+    background-color: #2e7d32;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #66bb6a;
+    color: white;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background-color: #1b5e20;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Projects */
+.projects {
+    padding: 30px;
+    text-align: center;
+}
+
+.project-box {
+    background: white;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    width: 200px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.about {
+    padding: 30px;
+    text-align: center;
+}
+
+.about img {
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.donate {
+    padding: 30px;
+    text-align: center;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    margin: auto;
+    width: 300px;
+    border-radius: 10px;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1b5e20;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f9f4;
+    color: #333;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #2e7d32; /* dark green */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+nav h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #a5d6a7; /* light green */
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0, 100, 0, 0.6), rgba(0, 100, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1508780709619-79562169bc64');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 40px;
+}
+
+.hero button {
+    background-color: #66bb6a;
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero button:hover {
+    background-color: #388e3c;
+}
+
+/* Projects section */
+.projects {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.projects h2 {
+    color: #2e7d32;
+}
+
+.project-box {
+    background-color: white;
+    border-left: 6px solid #66bb6a;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
