@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Donate - Green Future NGO</title>
+  <title>Contact Us - Green Future NGO</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,48 +38,43 @@
     }
     .page-hero .crumb { font-size: 0.8rem; opacity: 0.6; margin-bottom: 0.5rem; letter-spacing: 0.06em; }
     .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.75rem; }
-    .page-hero p { opacity: 0.85; max-width: 480px; margin: 0 auto; }
+    .page-hero p { opacity: 0.85; max-width: 440px; margin: 0 auto; }
 
-    .donate-wrapper { max-width: 800px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .contact-wrapper { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 
-    .donate-form-side h2 { font-family: 'Playfair Display', serif; color: var(--green-dark); font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .contact-form-side h2 { font-family: 'Playfair Display', serif; color: var(--green-dark); font-size: 1.5rem; margin-bottom: 0.25rem; }
     .form-underline { width: 50px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 1.75rem; }
-
-    /* Quick amounts */
-    .quick-amounts { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1rem; margin-top: 0.4rem; }
-    .amt-btn {
-      padding: 0.45rem 1.1rem; border: 1.5px solid #c8e6c9; border-radius: 50px;
-      background: var(--white); color: var(--green-mid); font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem; font-weight: 600; cursor: pointer;
-      transition: background var(--transition), border-color var(--transition), color var(--transition);
-    }
-    .amt-btn:hover, .amt-btn.active { background: var(--green-mid); color: var(--white); border-color: var(--green-mid); }
 
     form { display: flex; flex-direction: column; gap: 0.1rem; }
     form label { font-size: 0.8rem; font-weight: 600; color: var(--green-dark); margin-top: 1rem; letter-spacing: 0.05em; text-transform: uppercase; }
-    form input {
+    form input, form textarea {
       width: 100%; padding: 0.75rem 1rem; margin-top: 0.35rem;
       border: 1.5px solid #c8e6c9; border-radius: var(--radius);
       font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--text-dark);
       background: var(--white); transition: border-color var(--transition), box-shadow var(--transition); outline: none;
     }
-    form input:focus { border-color: var(--green-light); box-shadow: 0 0 0 3px rgba(56,142,60,0.1); }
+    form input:focus, form textarea:focus { border-color: var(--green-light); box-shadow: 0 0 0 3px rgba(56,142,60,0.1); }
+    form textarea { resize: vertical; min-height: 130px; }
     form button {
-      margin-top: 1.5rem; background: var(--accent); color: var(--green-dark); border: none;
+      margin-top: 1.5rem; background: var(--green-mid); color: var(--white); border: none;
       padding: 0.9rem 2rem; font-size: 1rem; font-family: 'DM Sans', sans-serif;
-      font-weight: 700; border-radius: 50px; cursor: pointer;
-      box-shadow: 0 4px 16px rgba(249,168,37,0.35);
+      font-weight: 600; border-radius: 50px; cursor: pointer;
+      box-shadow: 0 4px 14px rgba(46,125,50,0.25);
       transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
       letter-spacing: 0.02em;
     }
-    form button:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249,168,37,0.45); }
+    form button:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(27,94,32,0.3); }
 
-    .donate-why { display: flex; flex-direction: column; gap: 1rem; }
-    .donate-why h2 { font-family: 'Playfair Display', serif; color: var(--green-dark); font-size: 1.5rem; margin-bottom: 0.1rem; }
-    .why-card { background: var(--green-pale); border-radius: var(--radius-lg); padding: 1.2rem 1.4rem; display: flex; gap: 1rem; align-items: flex-start; }
-    .why-icon { font-size: 1.6rem; }
-    .why-text strong { display: block; color: var(--green-dark); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.15rem; }
-    .why-text span { color: var(--text-muted); font-size: 0.88rem; }
+    .contact-info-side { display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-info-side h2 { font-family: 'Playfair Display', serif; color: var(--green-dark); font-size: 1.5rem; margin-bottom: 0.1rem; }
+    .info-card {
+      background: var(--green-pale); border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem; display: flex; align-items: flex-start; gap: 1rem;
+      border-left: 4px solid var(--green-light);
+    }
+    .info-icon { font-size: 1.4rem; margin-top: 0.1rem; }
+    .info-text strong { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 0.2rem; font-weight: 600; }
+    .info-text span { color: var(--text-body); font-size: 0.97rem; }
 
     footer {
       background: var(--green-dark); color: rgba(255,255,255,0.8);
@@ -102,7 +97,7 @@
     @media (max-width: 768px) {
       nav { flex-direction: column; gap: 0.75rem; padding: 1rem; text-align: center; }
       nav ul { justify-content: center; }
-      .donate-wrapper { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.25rem; }
+      .contact-wrapper { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.25rem; }
     }
   </style>
 </head>
@@ -122,64 +117,58 @@
   </nav>
 
   <div class="page-hero">
-    <div class="crumb">Home › Donate</div>
-    <h1>Support Our Cause</h1>
-    <p>Your donation helps us protect the environment and support our projects across South Africa.</p>
+    <div class="crumb">Home › Contact</div>
+    <h1>Contact Us</h1>
+    <p>Have a question or want to get involved? We'd love to hear from you.</p>
   </div>
 
-  <div class="donate-wrapper">
-    <div class="donate-form-side">
-      <h2>Make a Donation</h2>
+  <div class="contact-wrapper">
+    <div class="contact-form-side">
+      <h2>Send a Message</h2>
       <div class="form-underline"></div>
-      <div class="quick-amounts">
-        <button class="amt-btn" onclick="setAmount(50)">R50</button>
-        <button class="amt-btn" onclick="setAmount(100)">R100</button>
-        <button class="amt-btn" onclick="setAmount(250)">R250</button>
-        <button class="amt-btn" onclick="setAmount(500)">R500</button>
-      </div>
       <form>
-        <label for="name">Full Name</label>
+        <label for="name">Your Name</label>
         <input type="text" id="name" placeholder="e.g. Sipho Dlamini" required/>
 
         <label for="email">Email Address</label>
         <input type="email" id="email" placeholder="e.g. sipho@email.com" required/>
 
-        <label for="amount">Donation Amount (R)</label>
-        <input type="number" id="amount" placeholder="Enter amount in Rands" min="10" required/>
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
 
-        <button type="submit">💚 Donate Now</button>
+        <button type="submit">Send Message ✉️</button>
       </form>
     </div>
 
-    <div class="donate-why">
-      <h2>Your Impact</h2>
+    <div class="contact-info-side">
+      <h2>Our Details</h2>
       <div class="form-underline"></div>
-      <div class="why-card">
-        <div class="why-icon">🌳</div>
-        <div class="why-text">
-          <strong>R50 plants a tree</strong>
-          <span>Funds one tree planted in a community forest restoration project.</span>
+      <div class="info-card">
+        <div class="info-icon">📧</div>
+        <div class="info-text">
+          <strong>Email</strong>
+          <span>info@greenfuture.org.za</span>
         </div>
       </div>
-      <div class="why-card">
-        <div class="why-icon">📚</div>
-        <div class="why-text">
-          <strong>R100 educates a child</strong>
-          <span>Covers recycling education materials for one learner for a term.</span>
+      <div class="info-card">
+        <div class="info-icon">📞</div>
+        <div class="info-text">
+          <strong>Phone</strong>
+          <span>+27 68 210 1354</span>
         </div>
       </div>
-      <div class="why-card">
-        <div class="why-icon">🧹</div>
-        <div class="why-text">
-          <strong>R250 funds a clean-up</strong>
-          <span>Supplies gloves, bags and equipment for a community clean-up event.</span>
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <strong>Location</strong>
+          <span>South Africa</span>
         </div>
       </div>
-      <div class="why-card">
-        <div class="why-icon">🌍</div>
-        <div class="why-text">
-          <strong>R500 changes a community</strong>
-          <span>Supports a full month of outreach and environmental education in a township.</span>
+      <div class="info-card">
+        <div class="info-icon">🕐</div>
+        <div class="info-text">
+          <strong>Office Hours</strong>
+          <span>Monday – Friday, 8am – 5pm</span>
         </div>
       </div>
     </div>
@@ -208,14 +197,6 @@
       <div class="footer-copy">© 2026 Green Future NGO | Sinazo Nyamezele. All rights reserved.</div>
     </div>
   </footer>
-
-  <script>
-    function setAmount(val) {
-      document.getElementById('amount').value = val;
-      document.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
-    }
-  </script>
 
 </body>
 </html>
