@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Enquire about volunteering, sponsorship, or partnership opportunities with Green Future NGO. Tell us how you'd like to help and get an instant response."/>
+  <meta name="keywords" content="volunteer environment South Africa, sponsor environmental NGO, NGO partnership opportunities, get involved NGO"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin"/>
+  <title>Enquire | Green Future NGO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  </head>
+<body>
+
+  <nav>
+    <div class="brand">Green Future NGO</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="navMenu">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="enquiry.html">Enquire</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms_of_service.html">Terms of Service</a></li>
+      <li><a href="privacy_policy.html">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="crumb">Home › Enquire</div>
+    <h1>Get Involved</h1>
+    <p>Tell us how you'd like to support Green Future NGO and we'll get back to you with the details.</p>
+  </div>
+
+  <div class="enquiry-wrapper">
+    <div class="tab-bar" role="tablist" aria-label="Enquiry type">
+      <button class="tab-btn active" data-tab="volunteer" role="tab" aria-selected="true">🌱 Volunteer</button>
+      <button class="tab-btn" data-tab="sponsor" role="tab" aria-selected="false">💚 Sponsor</button>
+      <button class="tab-btn" data-tab="partner" role="tab" aria-selected="false">🤝 Partner</button>
+    </div>
+
+    <form id="enquiryForm" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="enquiry"/>
+      <input type="hidden" id="enquiryType" name="enquiryType" value="volunteer"/>
+      <p class="hp-field"><label>Don't fill this out: <input name="bot-field"/></label></p>
+
+      <!-- COMMON FIELDS -->
+      <div class="field">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="e.g. Sipho Dlamini"/>
+        <span class="error-msg" id="err-fullName"></span>
+      </div>
+
+      <div class="field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="e.g. sipho@email.com"/>
+        <span class="error-msg" id="err-email"></span>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone Number (optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="e.g. 068 210 1354"/>
+        <span class="error-msg" id="err-phone"></span>
+      </div>
+
+      <!-- VOLUNTEER TAB -->
+      <div class="tab-panel active" id="panel-volunteer">
+        <div class="field">
+          <label for="volunteerArea">Area of Interest</label>
+          <select id="volunteerArea" name="volunteerArea">
+            <option value="" disabled selected>Select an area</option>
+            <option value="trees">Tree Planting</option>
+            <option value="recycling">Recycling Education</option>
+            <option value="cleanup">Community Clean-Ups</option>
+            <option value="any">Any area — happy to help wherever needed</option>
+          </select>
+          <span class="error-msg" id="err-volunteerArea"></span>
+        </div>
+        <div class="field">
+          <label for="availability">Your Availability</label>
+          <select id="availability" name="availability">
+            <option value="" disabled selected>Select your availability</option>
+            <option value="weekdays">Weekdays</option>
+            <option value="weekends">Weekends</option>
+            <option value="both">Both</option>
+          </select>
+          <span class="error-msg" id="err-availability"></span>
+        </div>
+      </div>
+
+      <!-- SPONSOR TAB -->
+      <div class="tab-panel" id="panel-sponsor">
+        <div class="field">
+          <label for="sponsorTier">Sponsorship Tier</label>
+          <select id="sponsorTier" name="sponsorTier">
+            <option value="" disabled selected>Select a tier</option>
+            <option value="bronze">Bronze — R500/month</option>
+            <option value="silver">Silver — R2,000/month</option>
+            <option value="gold">Gold — R5,000/month</option>
+            <option value="custom">Custom amount</option>
+          </select>
+          <span class="error-msg" id="err-sponsorTier"></span>
+        </div>
+        <div class="field" id="customAmountField" style="display:none;">
+          <label for="customAmount">Custom Monthly Amount (R)</label>
+          <input type="number" id="customAmount" name="customAmount" min="100" placeholder="Enter amount in Rands"/>
+          <span class="error-msg" id="err-customAmount"></span>
+        </div>
+        <div class="field">
+          <label for="orgNameSponsor">Organisation Name (optional)</label>
+          <input type="text" id="orgNameSponsor" name="orgNameSponsor" placeholder="e.g. Acme Pty Ltd"/>
+        </div>
+      </div>
+
+      <!-- PARTNER TAB -->
+      <div class="tab-panel" id="panel-partner">
+        <div class="field">
+          <label for="partnerType">Partnership Type</label>
+          <select id="partnerType" name="partnerType">
+            <option value="" disabled selected>Select a type</option>
+            <option value="media">Media / PR</option>
+            <option value="corporate">Corporate Partnership</option>
+            <option value="community">Community Organisation</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="error-msg" id="err-partnerType"></span>
+        </div>
+        <div class="field">
+          <label for="orgNamePartner">Organisation Name</label>
+          <input type="text" id="orgNamePartner" name="orgNamePartner" placeholder="e.g. Acme Pty Ltd"/>
+          <span class="error-msg" id="err-orgNamePartner"></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Additional Details (optional)</label>
+        <textarea id="message" name="message" placeholder="Anything else you'd like us to know..."></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn">Submit Enquiry</button>
+    </form>
+
+    <div class="response-panel" id="responsePanel" role="status" aria-live="polite">
+      <h3 id="responseTitle"></h3>
+      <p id="responseBody"></p>
+      <div class="response-cost" id="responseCost"></div>
+      <p id="responseExtra"></p>
+      <div class="response-status" id="responseStatus"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Green Future NGO</div>
+      <div class="footer-tagline">Protecting the environment since 2018</div>
+      <div class="footer-links">
+        <a href="homepage.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="enquiry.html">Enquire</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy_policy.html">Privacy Policy</a>
+        <a href="terms_of_service.html">Terms of Service</a>
+      </div>
+      <hr class="footer-divider"/>
+      <div class="social-icons">
+        <a href="#" title="Website">🌍</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="Twitter">🐦</a>
+        <a href="#" title="Instagram">📸</a>
+      </div>
+      <div class="footer-copy">© 2026 Green Future NGO | Sinazo Nyamezele. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* MOBILE NAV TOGGLE (hamburger menu) */
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+    /* ----------------------------------------------------------
+       TAB SWITCHING
+    ---------------------------------------------------------- */
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const enquiryTypeInput = document.getElementById('enquiryType');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+
+        enquiryTypeInput.value = btn.dataset.tab;
+        document.getElementById('responsePanel').classList.remove('visible');
+      });
+    });
+
+    /* Show/hide custom sponsorship amount field */
+    const sponsorTierSelect = document.getElementById('sponsorTier');
+    const customAmountField = document.getElementById('customAmountField');
+    sponsorTierSelect.addEventListener('change', () => {
+      customAmountField.style.display = sponsorTierSelect.value === 'custom' ? 'block' : 'none';
+    });
+
+    /* ----------------------------------------------------------
+       VALIDATION HELPERS
+    ---------------------------------------------------------- */
+    function setError(fieldId, message) {
+      const input = document.getElementById(fieldId);
+      const errEl = document.getElementById('err-' + fieldId);
+      input.setAttribute('aria-invalid', 'true');
+      if (errEl) { errEl.textContent = message; errEl.classList.add('visible'); }
+    }
+    function clearError(fieldId) {
+      const input = document.getElementById(fieldId);
+      const errEl = document.getElementById('err-' + fieldId);
+      input.removeAttribute('aria-invalid');
+      if (errEl) { errEl.textContent = ''; errEl.classList.remove('visible'); }
+    }
+    function isValidEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+    function isValidPhone(value) {
+      // South African style: optional +27 / 0 prefix, 9 digits, spaces allowed
+      return /^(\+27|0)[\s\-]?\d{2}[\s\-]?\d{3}[\s\-]?\d{4}$/.test(value.trim());
+    }
+
+    function validateForm() {
+      let valid = true;
+      const activeTab = enquiryTypeInput.value;
+
+      const fullName = document.getElementById('fullName').value.trim();
+      if (fullName.length < 2) { setError('fullName', 'Please enter your full name (at least 2 characters).'); valid = false; }
+      else { clearError('fullName'); }
+
+      const email = document.getElementById('email').value.trim();
+      if (!isValidEmail(email)) { setError('email', 'Please enter a valid email address.'); valid = false; }
+      else { clearError('email'); }
+
+      const phone = document.getElementById('phone').value.trim();
+      if (phone !== '' && !isValidPhone(phone)) { setError('phone', 'Please enter a valid SA phone number, e.g. 068 210 1354.'); valid = false; }
+      else { clearError('phone'); }
+
+      if (activeTab === 'volunteer') {
+        const area = document.getElementById('volunteerArea').value;
+        if (!area) { setError('volunteerArea', 'Please select an area of interest.'); valid = false; }
+        else { clearError('volunteerArea'); }
+
+        const avail = document.getElementById('availability').value;
+        if (!avail) { setError('availability', 'Please select your availability.'); valid = false; }
+        else { clearError('availability'); }
+      }
+
+      if (activeTab === 'sponsor') {
+        const tier = document.getElementById('sponsorTier').value;
+        if (!tier) { setError('sponsorTier', 'Please select a sponsorship tier.'); valid = false; }
+        else { clearError('sponsorTier'); }
+
+        if (tier === 'custom') {
+          const amount = document.getElementById('customAmount').value;
+          if (!amount || Number(amount) < 100) { setError('customAmount', 'Please enter an amount of at least R100.'); valid = false; }
+          else { clearError('customAmount'); }
+        }
+      }
+
+      if (activeTab === 'partner') {
+        const ptype = document.getElementById('partnerType').value;
+        if (!ptype) { setError('partnerType', 'Please select a partnership type.'); valid = false; }
+        else { clearError('partnerType'); }
+
+        const orgName = document.getElementById('orgNamePartner').value.trim();
+        if (orgName.length < 2) { setError('orgNamePartner', 'Please enter your organisation name.'); valid = false; }
+        else { clearError('orgNamePartner'); }
+      }
+
+      return valid;
+    }
+
+    /* ----------------------------------------------------------
+       DYNAMIC RESPONSE: cost / availability lookup
+    ---------------------------------------------------------- */
+    const volunteerAreas = {
+      trees:     { label: 'Tree Planting',        nextSlot: 'every Saturday morning',                         commitment: 'around 3 hours per session' },
+      recycling: { label: 'Recycling Education',  nextSlot: 'on weekday afternoons during school terms',       commitment: 'around 2 hours per session' },
+      cleanup:   { label: 'Community Clean-Ups',  nextSlot: 'on the first Sunday of every month',               commitment: 'around 4 hours per session' },
+      any:       { label: 'a project that matches current need', nextSlot: 'on a rolling, flexible basis',     commitment: 'varies depending on the project' }
+    };
+    const sponsorTiers = {
+      bronze: { label: 'Bronze', price: 500,  perks: 'your name listed on our supporters page and a digital thank-you certificate' },
+      silver: { label: 'Silver', price: 2000, perks: 'logo placement on our website, a social media shout-out, and a digital thank-you certificate' },
+      gold:   { label: 'Gold',   price: 5000, perks: 'logo placement on our website and printed materials, social media recognition, a quarterly impact report, and an invite to our annual community event' }
+    };
+
+    function buildResponse() {
+      const activeTab = enquiryTypeInput.value;
+      const title = document.getElementById('responseTitle');
+      const body = document.getElementById('responseBody');
+      const cost = document.getElementById('responseCost');
+      const extra = document.getElementById('responseExtra');
+
+      cost.textContent = '';
+      extra.textContent = '';
+
+      if (activeTab === 'volunteer') {
+        const areaKey = document.getElementById('volunteerArea').value;
+        const availKey = document.getElementById('availability').value;
+        const area = volunteerAreas[areaKey] || volunteerAreas.any;
+        const availLabel = { weekdays: 'weekdays', weekends: 'weekends', both: 'weekdays and weekends' }[availKey] || 'your selected times';
+
+        title.textContent = '🌱 Volunteering Availability';
+        body.textContent = `Thanks for your interest in ${area.label}! Sessions currently run ${area.nextSlot}, with a typical time commitment of ${area.commitment}. Since you're available on ${availLabel}, we'll match you to the next suitable intake.`;
+        extra.textContent = "We'll email you onboarding details, including what to bring and where to meet, within 2 business days.";
+
+      } else if (activeTab === 'sponsor') {
+        const tierKey = document.getElementById('sponsorTier').value;
+
+        if (tierKey === 'custom') {
+          const amount = Number(document.getElementById('customAmount').value) || 0;
+          title.textContent = '💚 Custom Sponsorship';
+          cost.textContent = `R${amount.toLocaleString('en-ZA')} / month`;
+          body.textContent = "Thank you for offering a custom sponsorship amount. Our partnerships team will reach out to discuss a recognition package that matches your contribution.";
+        } else {
+          const tier = sponsorTiers[tierKey];
+          title.textContent = `💚 ${tier.label} Sponsorship`;
+          cost.textContent = `R${tier.price.toLocaleString('en-ZA')} / month`;
+          body.textContent = `As a ${tier.label} sponsor, you'll receive ${tier.perks}.`;
+        }
+        extra.textContent = "Our partnerships team will contact you within 3 business days to confirm details and set up your sponsorship.";
+
+      } else if (activeTab === 'partner') {
+        const typeLabel = {
+          media: 'Media / PR', corporate: 'Corporate Partnership',
+          community: 'Community Organisation', other: 'a partnership'
+        }[document.getElementById('partnerType').value] || 'a partnership';
+
+        title.textContent = '🤝 Partnership Enquiry';
+        body.textContent = `Thank you for your interest in a ${typeLabel} with Green Future NGO. Partnership terms vary by scope, so our coordinator will review your enquiry and reach out with relevant availability and next steps.`;
+        extra.textContent = "Expect a response within 3–5 business days.";
+      }
+    }
+
+    /* ----------------------------------------------------------
+       AJAX SUBMISSION (Netlify Forms) + RESPONSE DISPLAY
+    ---------------------------------------------------------- */
+    const form = document.getElementById('enquiryForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const responsePanel = document.getElementById('responsePanel');
+    const responseStatus = document.getElementById('responseStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!validateForm()) {
+        responsePanel.classList.remove('visible');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      const formData = new FormData(form);
+      const encoded = new URLSearchParams(formData).toString();
+
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encoded
+        });
+        responseStatus.textContent = '✅ Your enquiry was submitted successfully.';
+      } catch (err) {
+        // Expected when not deployed on Netlify (e.g. local file testing) — the
+        // response below still displays so the user gets useful information.
+        responseStatus.textContent = "⚠️ We couldn't confirm delivery from this preview environment. Once deployed on Netlify this submission will reach our team directly — in the meantime, feel free to email info@greenfuture.org.za.";
+      }
+
+      buildResponse();
+      responsePanel.classList.add('visible');
+      responsePanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Enquiry';
+    });
+
+    /* SCROLL ANIMATIONS */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('in-view'); revealObserver.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>

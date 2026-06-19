@@ -3,135 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us - Green Future NGO</title>
+  <meta name="description" content="Learn about Green Future NGO's mission, vision, and leadership team driving environmental change in South African communities since 2018."/>
+  <meta name="keywords" content="Green Future NGO mission, environmental NGO leadership, sustainability South Africa, NGO about us"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin"/>
+  <title>About Us | Green Future NGO South Africa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green-dark: #1b5e20; --green-mid: #2e7d32; --green-light: #388e3c;
-      --green-pale: #f1f8e9; --green-tint: #e8f5e9;
-      --accent: #f9a825; --accent-hover: #f57f17;
-      --text-dark: #1a2a1a; --text-body: #3d4f3d; --text-muted: #6a7f6a;
-      --white: #ffffff;
-      --shadow-sm: 0 2px 8px rgba(27,94,32,0.08);
-      --shadow-md: 0 4px 24px rgba(27,94,32,0.13);
-      --radius: 10px; --radius-lg: 16px; --transition: 0.3s ease;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; font-size: 1rem; line-height: 1.7; color: var(--text-body); background: var(--white); }
-    a { text-decoration: none; color: inherit; transition: color var(--transition); }
-    img { max-width: 100%; height: auto; display: block; }
-
-    /* NAV */
-    nav {
-      display: flex; justify-content: space-between; align-items: center;
-      background: var(--green-dark); padding: 1rem 2.5rem;
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.2);
-    }
-    nav h1 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); letter-spacing: 0.02em; }
-    nav ul { list-style: none; display: flex; gap: 0.2rem; flex-wrap: wrap; align-items: center; }
-    nav ul li a {
-      color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500;
-      padding: 0.4rem 0.85rem; border-radius: 6px;
-      transition: background var(--transition), color var(--transition);
-    }
-    nav ul li a:hover { background: rgba(255,255,255,0.12); color: var(--white); }
-
-    /* PAGE HERO */
-    .page-hero {
-      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-light) 100%);
-      color: var(--white); padding: 4rem 2rem 3.5rem; text-align: center;
-    }
-    .page-hero .crumb { font-size: 0.8rem; opacity: 0.6; margin-bottom: 0.5rem; letter-spacing: 0.06em; }
-    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); }
-
-    /* CONTENT */
-    .about-content { max-width: 880px; margin: 0 auto; padding: 4rem 2rem; }
-    .about-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-bottom: 3.5rem; }
-    .about-intro p { color: var(--text-body); font-size: 1.05rem; }
-    .mission-vision { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .mv-card {
-      background: var(--green-pale); border-radius: var(--radius-lg);
-      padding: 1.75rem; border-left: 4px solid var(--green-light);
-    }
-    .mv-card h3 { font-family: 'Playfair Display', serif; color: var(--green-dark); font-size: 1.1rem; margin-bottom: 0.5rem; }
-    .mv-card p { color: var(--text-body); font-size: 0.95rem; }
-
-    /* LEADERSHIP */
-    .leadership { margin-top: 4rem; }
-    .leadership h2 {
-      font-family: 'Playfair Display', serif; color: var(--green-dark);
-      font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.5rem;
-    }
-    .leadership-underline { width: 60px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: 2.5rem; }
-    .executives { display: flex; gap: 2rem; flex-wrap: wrap; }
-    .exec {
-      background: var(--green-pale); border-radius: var(--radius-lg);
-      padding: 2rem 1.5rem; text-align: center; flex: 1 1 220px;
-      box-shadow: var(--shadow-sm); transition: box-shadow var(--transition), transform var(--transition);
-    }
-    .exec:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
-    .exec-avatar {
-      width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 1rem;
-      background: var(--green-tint); display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem; border: 3px solid var(--green-light); overflow: hidden;
-    }
-    .exec-avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .exec strong { display: block; color: var(--green-dark); font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
-    .exec-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-    .exec p { color: var(--text-muted); font-size: 0.9rem; }
-
-    /* FOOTER */
-    footer {
-      background: var(--green-dark); color: rgba(255,255,255,0.8);
-      padding: 3.5rem 2rem 2rem; position: relative; overflow: hidden; margin-top: 2rem;
-    }
-    footer::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--green-light), var(--accent), var(--green-light));
-    }
-    footer::after { content: '🌿'; position: absolute; font-size: 12rem; opacity: 0.04; bottom: -2rem; right: 1rem; pointer-events: none; line-height: 1; }
-    .footer-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--white); font-weight: 700; margin-bottom: 0.25rem; }
-    .footer-tagline { font-size: 0.83rem; color: rgba(255,255,255,0.45); letter-spacing: 0.05em; margin-bottom: 2rem; }
-    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.25rem 0; margin-bottom: 1.5rem; }
-    .footer-links a { color: rgba(255,255,255,0.6); font-size: 0.87rem; margin: 0 0.85rem; padding-bottom: 2px; border-bottom: 1px solid transparent; font-weight: 500; transition: color var(--transition), border-color var(--transition); }
-    .footer-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); max-width: 440px; margin: 0 auto 1.5rem; }
-    .social-icons { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 2rem; }
-    .social-icons a {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 40px; height: 40px; border-radius: 50%; font-size: 1.1rem;
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.7);
-      transition: background var(--transition), transform var(--transition), color var(--transition), border-color var(--transition);
-    }
-    .social-icons a:hover { background: var(--accent); color: var(--green-dark); border-color: var(--accent); transform: translateY(-3px); }
-    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-
-    @media (max-width: 768px) {
-      nav { flex-direction: column; gap: 0.75rem; padding: 1rem; text-align: center; }
-      nav ul { justify-content: center; }
-      .about-intro { grid-template-columns: 1fr; gap: 1.5rem; }
-      .mission-vision { grid-template-columns: 1fr; }
-      .executives { flex-direction: column; align-items: center; }
-      .exec { max-width: 340px; width: 100%; }
-    }
-  </style>
-</head>
+  <link rel="stylesheet" href="styles.css"/>
+  </head>
 <body>
 
   <nav>
-    <h1>Green Future NGO</h1>
-    <ul>
+    <div class="brand">Green Future NGO</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="navMenu">
       <li><a href="homepage.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html">Projects</a></li>
+      <li><a href="enquiry.html">Enquire</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="terms of service.html">Terms of Service</a></li>
-      <li><a href="privacy policy.html">Privacy Policy</a></li>
+      <li><a href="terms_of_service.html">Terms of Service</a></li>
+      <li><a href="privacy_policy.html">Privacy Policy</a></li>
     </ul>
   </nav>
 
@@ -141,9 +37,9 @@
   </div>
 
   <div class="about-content">
-    <div class="about-intro">
+    <div class="about-intro reveal">
       <div>
-        <p>Founded in 2018, <strong>Green Future NGO</strong> works to protect the environment and promote sustainable living across South Africa. We believe that lasting change begins at community level.</p>
+        <p>Founded in 2018, <strong>Green Future NGO</strong> works to protect the environment and promote sustainable living across South Africa. We believe that lasting change begins at community level. Explore our active work on the <a href="projects.html" style="color: var(--green-mid); font-weight: 600;">Projects</a> page, or see how you can help on our <a href="donate.html" style="color: var(--green-mid); font-weight: 600;">Donate</a> page.</p>
       </div>
       <div class="mission-vision">
         <div class="mv-card">
@@ -159,19 +55,63 @@
 
     <div class="leadership">
       <h2>Our Leadership</h2>
-      <div class="leadership-underline"></div>
+      <div class="section-underline"></div>
       <div class="executives">
-        <div class="exec">
-           <img src="images/Sinazo Nyamezele CEO.jpg" width="250" alt="CEO Sinazo Nyamezele">
+        <div class="exec reveal">
+           <div class="exec-avatar"><img src="images/Sinazo Nyamezele CEO.jpg" width="250" loading="lazy" alt="CEO Sinazo Nyamezele"></div>
           <div class="exec-title">Chief Executive Officer</div>
           <strong>Sinazo Nyamezele</strong>
           <p>Environmental advocate and founder of Green Future NGO, driving community impact since 2018.</p>
         </div>
-        <div class="exec">
-          <img src="images/Thato Nyamezele CIO.jpg" width="250" alt="CIO Thato Nyamezele">
+        <div class="exec reveal">
+          <div class="exec-avatar"><img src="images/Thato Nyamezele CIO.jpg" width="250" loading="lazy" alt="CIO Thato Nyamezele"></div>
           <div class="exec-title">Chief Information Officer</div>
           <strong>Thato Nyamezele</strong>
           <p>Technology strategist supporting sustainable innovation and digital outreach for the NGO.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ ACCORDION (interactive element) -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="section-underline"></div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How can I get involved with Green Future NGO?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">You can volunteer at one of our community events, sponsor a project, or simply spread the word. Visit our <a href="enquiry.html" style="color: var(--green-mid); font-weight: 600;">Enquire</a> page to tell us how you'd like to help.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Where does my donation go?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Every donation funds our active programmes directly, from tree planting and recycling education to community clean-ups. See our <a href="donate.html" style="color: var(--green-mid); font-weight: 600;">Donate</a> page for a full breakdown of impact per amount.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you operate outside South Africa?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Currently, our projects are focused on communities across South Africa. We hope to expand our reach as our network of volunteers and partners grows.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do I contact the team directly?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Reach us any time through our <a href="contact.html" style="color: var(--green-mid); font-weight: 600;">Contact</a> page, by email at info@greenfuture.org.za, or by phone on +27 68 210 1354.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -185,10 +125,11 @@
         <a href="homepage.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
+        <a href="enquiry.html">Enquire</a>
         <a href="donate.html">Donate</a>
         <a href="contact.html">Contact</a>
-        <a href="privacy policy.html">Privacy Policy</a>
-        <a href="terms of service.html">Terms of Service</a>
+        <a href="privacy_policy.html">Privacy Policy</a>
+        <a href="terms_of_service.html">Terms of Service</a>
       </div>
       <hr class="footer-divider"/>
       <div class="social-icons">
@@ -200,6 +141,62 @@
       <div class="footer-copy">© 2026 Green Future NGO | Sinazo Nyamezele. All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    /* MOBILE NAV TOGGLE (hamburger menu) */
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+    /* FAQ ACCORDION */
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        // close any other open items (single-open accordion behaviour)
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+          if (openItem !== item) {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-answer').style.maxHeight = null;
+            openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
+        });
+        if (isOpen) {
+          item.classList.remove('open');
+          answer.style.maxHeight = null;
+          question.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          question.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* SCROLL ANIMATIONS */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
 
 </body>
 </html>

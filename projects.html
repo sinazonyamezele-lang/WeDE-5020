@@ -3,111 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects - Green Future NGO</title>
+  <meta name="description" content="Explore Green Future NGO's environmental projects, including tree planting, recycling education, and community clean-ups across South Africa."/>
+  <meta name="keywords" content="tree planting projects South Africa, recycling education programme, community clean-up events, environmental projects"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin"/>
+  <title>Our Projects | Green Future NGO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green-dark: #1b5e20; --green-mid: #2e7d32; --green-light: #388e3c;
-      --green-pale: #f1f8e9; --green-tint: #e8f5e9;
-      --accent: #f9a825; --accent-hover: #f57f17;
-      --text-dark: #1a2a1a; --text-body: #3d4f3d; --text-muted: #6a7f6a;
-      --white: #ffffff;
-      --shadow-sm: 0 2px 8px rgba(27,94,32,0.08);
-      --shadow-md: 0 4px 24px rgba(27,94,32,0.13);
-      --shadow-lg: 0 8px 40px rgba(27,94,32,0.18);
-      --radius: 10px; --radius-lg: 16px; --transition: 0.3s ease;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; font-size: 1rem; line-height: 1.7; color: var(--text-body); background: var(--white); }
-    a { text-decoration: none; color: inherit; transition: color var(--transition); }
-    img { max-width: 100%; height: auto; display: block; }
-
-    nav {
-      display: flex; justify-content: space-between; align-items: center;
-      background: var(--green-dark); padding: 1rem 2.5rem;
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.2);
-    }
-    nav h1 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); letter-spacing: 0.02em; }
-    nav ul { list-style: none; display: flex; gap: 0.2rem; flex-wrap: wrap; align-items: center; }
-    nav ul li a { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 500; padding: 0.4rem 0.85rem; border-radius: 6px; transition: background var(--transition), color var(--transition); }
-    nav ul li a:hover { background: rgba(255,255,255,0.12); color: var(--white); }
-
-    .page-hero {
-      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-light) 100%);
-      color: var(--white); padding: 4rem 2rem 3.5rem; text-align: center;
-    }
-    .page-hero .crumb { font-size: 0.8rem; opacity: 0.6; margin-bottom: 0.5rem; letter-spacing: 0.06em; }
-    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.75rem; }
-    .page-hero p { opacity: 0.85; max-width: 480px; margin: 0 auto; font-size: 1.05rem; }
-
-    .projects-grid { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
-    .project-card {
-      display: grid; grid-template-columns: 280px 1fr; gap: 0;
-      background: var(--white); border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md); overflow: hidden; margin-bottom: 2rem;
-      border: 1px solid rgba(27,94,32,0.07);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .project-card:nth-child(even) { grid-template-columns: 1fr 280px; }
-    .project-card:nth-child(even) .project-img { order: 2; }
-    .project-card:nth-child(even) .project-body { order: 1; }
-    .project-img {
-      background: var(--green-tint); display: flex; align-items: center;
-      justify-content: center; font-size: 5rem; min-height: 220px; overflow: hidden;
-    }
-    .project-img img { width: 100%; height: 100%; object-fit: cover; }
-    .project-body { padding: 2rem 2rem; display: flex; flex-direction: column; justify-content: center; }
-    .project-tag {
-      display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--green-light); background: rgba(56,142,60,0.1);
-      border: 1px solid rgba(56,142,60,0.2); padding: 0.2rem 0.75rem; border-radius: 50px;
-      margin-bottom: 0.75rem; width: fit-content;
-    }
-    .project-body h2 { font-family: 'Playfair Display', serif; color: var(--green-dark); font-size: 1.4rem; margin-bottom: 0.6rem; }
-    .project-body p { color: var(--text-muted); font-size: 0.95rem; }
-
-    footer {
-      background: var(--green-dark); color: rgba(255,255,255,0.8);
-      padding: 3.5rem 2rem 2rem; position: relative; overflow: hidden; margin-top: 2rem;
-    }
-    footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--green-light), var(--accent), var(--green-light)); }
-    footer::after { content: '🌿'; position: absolute; font-size: 12rem; opacity: 0.04; bottom: -2rem; right: 1rem; pointer-events: none; line-height: 1; }
-    .footer-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--white); font-weight: 700; margin-bottom: 0.25rem; }
-    .footer-tagline { font-size: 0.83rem; color: rgba(255,255,255,0.45); letter-spacing: 0.05em; margin-bottom: 2rem; }
-    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.25rem 0; margin-bottom: 1.5rem; }
-    .footer-links a { color: rgba(255,255,255,0.6); font-size: 0.87rem; margin: 0 0.85rem; padding-bottom: 2px; border-bottom: 1px solid transparent; font-weight: 500; transition: color var(--transition), border-color var(--transition); }
-    .footer-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); max-width: 440px; margin: 0 auto 1.5rem; }
-    .social-icons { display: flex; justify-content: center; gap: 0.75rem; margin-bottom: 2rem; }
-    .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; font-size: 1.1rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); transition: background var(--transition), transform var(--transition), color var(--transition), border-color var(--transition); }
-    .social-icons a:hover { background: var(--accent); color: var(--green-dark); border-color: var(--accent); transform: translateY(-3px); }
-    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-
-    @media (max-width: 768px) {
-      nav { flex-direction: column; gap: 0.75rem; padding: 1rem; text-align: center; }
-      nav ul { justify-content: center; }
-      .project-card, .project-card:nth-child(even) { grid-template-columns: 1fr; }
-      .project-card:nth-child(even) .project-img, .project-card:nth-child(even) .project-body { order: unset; }
-      .project-img { min-height: 160px; font-size: 4rem; }
-    }
-  </style>
-</head>
+  <link rel="stylesheet" href="styles.css"/>
+  </head>
 <body>
 
   <nav>
-    <h1>Green Future NGO</h1>
-    <ul>
+    <div class="brand">Green Future NGO</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="navMenu">
       <li><a href="homepage.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html">Projects</a></li>
+      <li><a href="enquiry.html">Enquire</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="terms of service.html">Terms of Service</a></li>
-      <li><a href="privacy policy.html">Privacy Policy</a></li>
+      <li><a href="terms_of_service.html">Terms of Service</a></li>
+      <li><a href="privacy_policy.html">Privacy Policy</a></li>
     </ul>
   </nav>
 
@@ -118,32 +38,42 @@
   </div>
 
   <div class="projects-grid">
-    <div class="project-card">
-      <img src="images/tree..jpeg" width="300" alt="community working together">
-      <div class="project-body">
-        <div class="project-tag">Reforestation</div>
-        <h2>Tree Planting</h2>
-        <p>We plant trees to restore forests, improve air quality, and rebuild natural habitats. Working with local communities, we've planted over 5,000 trees across South Africa.</p>
+
+    <div class="controls">
+      <div class="filter-bar" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-category="all">All Projects</button>
+        <button class="filter-btn" data-category="reforestation">Reforestation</button>
+        <button class="filter-btn" data-category="education">Education</button>
+        <button class="filter-btn" data-category="community">Community Action</button>
       </div>
+      <div class="search-bar">
+        <span class="search-icon">🔎</span>
+        <input type="text" id="searchInput" placeholder="Search projects (e.g. trees, recycling, clean-up)..." aria-label="Search projects"/>
+      </div>
+      <p class="results-count" id="resultsCount"></p>
     </div>
 
-    <div class="project-card">
-     <img src="images/recycle..jpeg" width="300" alt="community working together">
-      <div class="project-body">
-        <div class="project-tag">Education</div>
-        <h2>Recycling Education</h2>
-        <p>We teach communities how to recycle and reduce waste through workshops, school programmes, and awareness campaigns — building habits that last a lifetime.</p>
-      </div>
+    <div id="projectsContainer"></div>
+
+    <div class="no-results" id="noResults">
+      <div class="no-results-icon">🌱</div>
+      <p>No projects match your search. Try a different keyword or filter.</p>
     </div>
 
-    <div class="project-card">
-     <img src="images/cleanu.up.jpeg" width="300" alt="community working together">
-      <div class="project-body">
-        <div class="project-tag">Community Action</div>
-        <h2>Community Clean-Ups</h2>
-        <p>We organise clean-up events to keep our neighbourhoods, rivers, and natural spaces pristine. Every event brings the community together for a cleaner environment.</p>
-      </div>
+    <div style="text-align:center; margin-top:3rem;">
+      <p style="color: var(--text-muted); margin-bottom: 0.75rem;">Want to support these projects?</p>
+      <a href="donate.html" style="color: var(--green-mid); font-weight: 600; border-bottom: 1px solid var(--green-mid); padding-bottom: 2px;">Donate Now →</a>
     </div>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <figure>
+      <img id="lightboxImg" src="" alt=""/>
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
   </div>
 
   <footer>
@@ -154,10 +84,11 @@
         <a href="homepage.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
+        <a href="enquiry.html">Enquire</a>
         <a href="donate.html">Donate</a>
         <a href="contact.html">Contact</a>
-        <a href="privacy policy.html">Privacy Policy</a>
-        <a href="terms of service.html">Terms of Service</a>
+        <a href="privacy_policy.html">Privacy Policy</a>
+        <a href="terms_of_service.html">Terms of Service</a>
       </div>
       <hr class="footer-divider"/>
       <div class="social-icons">
@@ -169,6 +100,150 @@
       <div class="footer-copy">© 2026 Green Future NGO | Sinazo Nyamezele. All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    /* MOBILE NAV TOGGLE (hamburger menu) */
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+    /* ----------------------------------------------------------
+       DYNAMIC CONTENT: project data is rendered into the DOM
+       rather than hard-coded as static HTML. This also powers
+       the category filter and keyword search below.
+    ---------------------------------------------------------- */
+    const projects = [
+      {
+        category: 'reforestation',
+        tag: 'Reforestation',
+        title: 'Tree Planting',
+        desc: "We plant trees to restore forests, improve air quality, and rebuild natural habitats. Working with local communities, we've planted over 5,000 trees across South Africa.",
+        img: 'images/tree planting.jpg',
+        alt: 'Volunteers planting young trees together in a community reforestation project'
+      },
+      {
+        category: 'education',
+        tag: 'Education',
+        title: 'Recycling Education',
+        desc: 'We teach communities how to recycle and reduce waste through workshops, school programmes, and awareness campaigns — building habits that last a lifetime.',
+        img: 'images/recycling education.jpg',
+        alt: 'Community members learning about recycling at an outdoor education workshop'
+      },
+      {
+        category: 'community',
+        tag: 'Community Action',
+        title: 'Community Clean-Ups',
+        desc: 'We organise clean-up events to keep our neighbourhoods, rivers, and natural spaces pristine. Every event brings the community together for a cleaner environment.',
+        img: 'images/community action.jpg',
+        alt: 'Group of volunteers collecting litter during a neighbourhood clean-up event'
+      }
+    ];
+
+    let activeCategory = 'all';
+    let searchTerm = '';
+
+    function renderProjects() {
+      const container = document.getElementById('projectsContainer');
+      const noResults = document.getElementById('noResults');
+      const resultsCount = document.getElementById('resultsCount');
+
+      const filtered = projects.filter(p => {
+        const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+        const haystack = (p.title + ' ' + p.desc + ' ' + p.tag).toLowerCase();
+        const matchesSearch = haystack.includes(searchTerm.trim().toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      container.innerHTML = '';
+      filtered.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'project-card reveal';
+        card.innerHTML = `
+          <div class="project-img">
+            <img src="${p.img}" width="300" loading="lazy" alt="${p.alt}" class="lightbox-trigger" data-full="${p.img}" data-caption="${p.title}">
+          </div>
+          <div class="project-body">
+            <div class="project-tag">${p.tag}</div>
+            <h2>${p.title}</h2>
+            <p>${p.desc}</p>
+          </div>`;
+        container.appendChild(card);
+      });
+
+      noResults.style.display = filtered.length === 0 ? 'block' : 'none';
+      resultsCount.textContent = filtered.length === 0
+        ? ''
+        : `Showing ${filtered.length} of ${projects.length} project${projects.length === 1 ? '' : 's'}`;
+
+      observeReveals();
+      attachLightboxListeners();
+    }
+
+    /* CATEGORY FILTER (DOM event delegation + class toggling) */
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.dataset.category;
+        renderProjects();
+      });
+    });
+
+    /* SEARCH FUNCTIONALITY */
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      searchTerm = e.target.value;
+      renderProjects();
+    });
+
+    /* SCROLL ANIMATIONS via IntersectionObserver */
+    function observeReveals() {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    }
+
+    /* GALLERY LIGHTBOX */
+    function attachLightboxListeners() {
+      document.querySelectorAll('.lightbox-trigger').forEach(img => {
+        img.addEventListener('click', () => {
+          document.getElementById('lightboxImg').src = img.dataset.full;
+          document.getElementById('lightboxImg').alt = img.alt;
+          document.getElementById('lightboxCaption').textContent = img.dataset.caption;
+          document.getElementById('lightboxOverlay').classList.add('active');
+        });
+      });
+    }
+    function closeLightbox() {
+      document.getElementById('lightboxOverlay').classList.remove('active');
+    }
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    document.getElementById('lightboxOverlay').addEventListener('click', (e) => {
+      if (e.target.id === 'lightboxOverlay') closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    renderProjects();
+  </script>
 
 </body>
 </html>

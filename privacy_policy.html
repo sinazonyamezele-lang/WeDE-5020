@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Read Green Future NGO's privacy policy to understand how we collect, use, and protect your personal information."/>
+  <meta name="keywords" content="Green Future NGO privacy policy, data protection NGO South Africa"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin"/>
+  <title>Privacy Policy | Green Future NGO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  </head>
+<body>
+
+  <nav>
+    <div class="brand">Green Future NGO</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="navMenu">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="enquiry.html">Enquire</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms_of_service.html">Terms of Service</a></li>
+      <li><a href="privacy_policy.html">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="crumb">Home › Privacy Policy</div>
+    <h1>Privacy Policy</h1>
+  </div>
+
+  <div class="content-card">
+    <p>Green Future NGO values your privacy and is committed to protecting your personal information. This policy explains how we collect, use, and protect your data.</p>
+
+    <h2>Information We Collect</h2>
+    <ul>
+      <li>Personal details such as name, email, and phone number when you contact us or donate.</li>
+      <li>Payment information for donations (processed securely through our payment provider).</li>
+      <li>Non-personal data such as browser type and site usage statistics.</li>
+    </ul>
+
+    <h2>How We Use Your Information</h2>
+    <p>We use your information to process donations, communicate project updates, and improve our services. We will never sell your data to third parties.</p>
+
+    <h2>Data Protection</h2>
+    <p>We implement security measures to protect your information against unauthorised access or misuse. All sensitive data is encrypted and securely stored.</p>
+
+    <h2>Your Rights</h2>
+    <p>You may request access, correction, or deletion of your personal data by contacting us at <strong>info@greenfuture.org.za</strong>.</p>
+
+    <h2>Cookies</h2>
+    <p>Our website may use cookies to improve your browsing experience. You can disable cookies in your browser settings at any time.</p>
+
+    <h2>Contact</h2>
+    <p>For any privacy concerns, please contact us at info@greenfuture.org.za or call +27 68 210 1354.</p>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Green Future NGO</div>
+      <div class="footer-tagline">Protecting the environment since 2018</div>
+      <div class="footer-links">
+        <a href="homepage.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="enquiry.html">Enquire</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy_policy.html">Privacy Policy</a>
+        <a href="terms_of_service.html">Terms of Service</a>
+      </div>
+      <hr class="footer-divider"/>
+      <div class="social-icons">
+        <a href="#" title="Website">🌍</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="Twitter">🐦</a>
+        <a href="#" title="Instagram">📸</a>
+      </div>
+      <div class="footer-copy">© 2026 Green Future NGO | Sinazo Nyamezele. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* MOBILE NAV TOGGLE (hamburger menu) */
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Review the terms of service for using the Green Future NGO website, making donations, and engaging with our environmental programmes."/>
+  <meta name="keywords" content="Green Future NGO terms of service, website terms NGO South Africa"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin"/>
+  <title>Terms of Service | Green Future NGO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  </head>
+<body>
+
+  <nav>
+    <div class="brand">Green Future NGO</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="navMenu">
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="enquiry.html">Enquire</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms_of_service.html">Terms of Service</a></li>
+      <li><a href="privacy_policy.html">Privacy Policy</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <div class="crumb">Home › Terms of Service</div>
+    <h1>Terms of Service</h1>
+  </div>
+
+  <div class="content-card">
+    <p>By using the Green Future NGO website, you agree to the following terms and conditions. Please read them carefully.</p>
+
+    <h2>Use of Website</h2>
+    <p>All content on this website is provided for informational purposes only. You agree not to misuse the site, reproduce content without permission, or engage in any unlawful activity through the site.</p>
+
+    <h2>Donations</h2>
+    <p>All donations are voluntary and non-refundable. Donors will receive a receipt via email upon successful processing. Green Future NGO is committed to using all donations responsibly toward our environmental programmes.</p>
+
+    <h2>Intellectual Property</h2>
+    <p>All content, including text, images, logos, and design, are the property of Green Future NGO unless otherwise stated. Unauthorised use or reproduction of our content is prohibited.</p>
+
+    <h2>Limitation of Liability</h2>
+    <p>Green Future NGO is not liable for any damages arising from the use of, or inability to use, our website or any reliance on its content.</p>
+
+    <h2>Third-Party Links</h2>
+    <p>Our website may contain links to third-party websites. We are not responsible for the content or privacy practices of those sites.</p>
+
+    <h2>Governing Law</h2>
+    <p>These terms are governed by and construed in accordance with the laws of the Republic of South Africa.</p>
+
+    <h2>Changes to Terms</h2>
+    <p>Green Future NGO reserves the right to update these terms at any time. Continued use of the website after changes constitutes acceptance of the new terms.</p>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Green Future NGO</div>
+      <div class="footer-tagline">Protecting the environment since 2018</div>
+      <div class="footer-links">
+        <a href="homepage.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="enquiry.html">Enquire</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy_policy.html">Privacy Policy</a>
+        <a href="terms_of_service.html">Terms of Service</a>
+      </div>
+      <hr class="footer-divider"/>
+      <div class="social-icons">
+        <a href="#" title="Website">🌍</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="Twitter">🐦</a>
+        <a href="#" title="Instagram">📸</a>
+      </div>
+      <div class="footer-copy">© 2026 Green Future NGO | Sinazo Nyamezele. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* MOBILE NAV TOGGLE (hamburger menu) */
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen);
+      });
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
